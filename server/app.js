@@ -26,13 +26,13 @@ app.use(session({
 }));
 
 // serve static files
-// app.use(express.static(`${__dirname}/../client/dist`));
+app.use(express.static(`${__dirname}/../client/dist`));
 
-const root = require('path').join(__dirname, '/../client', 'dist');
+// const root = require('path').join(__dirname, '/../client', 'dist');
 
-app.get('*', (req, res) => {
-  res.sendFile('index.html', { root });
-});
+// app.get('*', (req, res) => {
+//   res.sendFile('index.html', { root });
+// });
 
 //* ****************************
 //  Helper Helpers

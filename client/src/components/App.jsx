@@ -299,7 +299,8 @@ class App extends React.Component {
             <Route
               path="/"
               exact
-              render={props => (
+              render={props => token ?
+                (
                 <Dashboard
                   {...props}
                   hoaId={hoaId}
@@ -315,8 +316,10 @@ class App extends React.Component {
                   makeDeposit={this.makeDeposit}
                   getAllExpenses={this.getAllExpenses}
                   getAllExpensesByYear={this.getAllExpensesByYear}
-                />
-              )}
+                />)
+                : (
+                  <Redirect to="/login" />
+                )}
             />
             <Route path="/about" component={About} />
             <Route

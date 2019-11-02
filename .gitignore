@@ -1,6 +1,5 @@
 node_modules
 package-lock.json
-client/dist/bundle.js
 config.json
 .env
 credentials.json

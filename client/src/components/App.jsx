@@ -299,7 +299,7 @@ class App extends React.Component {
             <Route
               path="/"
               exact
-              render={props => token ?
+              render={props => localStorage.getItem("uid") ?
                 (
                 <Dashboard
                   {...props}
@@ -336,7 +336,7 @@ class App extends React.Component {
             <Route
               path="/members"
               render={props =>
-                token ? (
+                localStorage.getItem("uid") ? (
                   <MemberList {...props} hoaId={hoaId} hoaInfo={hoaInfo} />
                 ) : (
                   <Redirect to="/login" />
@@ -347,7 +347,7 @@ class App extends React.Component {
             <Route
               path="/board"
               render={props =>
-                token ? (
+                localStorage.getItem("uid") ? (
                   <Board
                     {...props}
                     hoaId={hoaId}
@@ -364,7 +364,7 @@ class App extends React.Component {
             <Route
               path="/calendar"
               render={props =>
-                token ? (
+                localStorage.getItem("uid") ? (
                   <CalendarPage {...props} hoaId={hoaId} hoaInfo={hoaInfo} />
                 ) : (
                   <Redirect to="/login" />
@@ -374,7 +374,7 @@ class App extends React.Component {
             <Route
               path="/maintenance"
               render={props =>
-                token ? (
+                localStorage.getItem("uid") ? (
                   <Maintenence
                     {...props}
                     hoaId={hoaId}
